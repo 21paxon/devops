@@ -1,30 +1,46 @@
-
 pipeline {
-    // Execute on any available Jenkins agent
+
     agent any
 
-    // Define the pipeline stages
     stages {
+
+        stage('Install Dependencies') {
+            steps {
+                echo 'Installing testing dependencies...'
+                sh 'npm ci'
+                echo 'Dependencies installed successfully!'
+            }
+        }
+
+        stage('Unit Testing') {
+            steps {
+                echo 'Running unit tests...'
+                sh 'npm run test:unit'
+                echo 'Unit tests completed successfully!'
+            }
+        }
+
+        stage('Integration Testing') {
+            steps {
+                echo 'Running integration tests...'
+                sh 'npm run test:integration'
+                echo 'Integration tests completed successfully!'
+            }
+        }
 
         stage('Build') {
             steps {
                 echo 'Starting DevOps application build...'
-
-                // Check Docker availability
                 sh 'docker --version'
-
-                // Build the Docker image
                 sh 'docker build -t devops-app:1.0 .'
-
                 echo 'Docker image build completed!'
             }
         }
     }
 
-    // Actions executed after the pipeline
     post {
         success {
-            echo 'SUCCESS: DevOps application built successfully.'
+            echo 'SUCCESS: All HTML tests passed and Docker image built.'
         }
 
         failure {

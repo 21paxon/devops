@@ -4,6 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Project</title>
+</head>
+
+<body>
+
+    <h1>Hello World from DevOps!</h1>
+
+    <p>Learning Git branching and merging.</p>
+
+    <h2>Feature Branch Development</h2>
+
+    <p>This content was developed on feature-homepage.</p>
+
+    <h2>Hello DevOps Application</h2>
+
+    <p>Click the link below to visit the Hello DevOps page.</p>
+
+    <a href="hello.html">Visit Hello DevOps</a>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Campus Notes - Learning Application</title>
 
@@ -76,36 +102,4 @@
                     const title = document.createElement("h3");
                     title.textContent = note.title;
 
-                    const category = document.createElement("p");
-                    category.className = "category";
-                    category.textContent = "Category: " + note.category;
-
-                    const content = document.createElement("p");
-                    content.textContent = note.content;
-
-                    div.appendChild(title);
-                    div.appendChild(category);
-                    div.appendChild(content);
-
-                    container.appendChild(div);
-
-                });
-
-            } catch (error) {
-
-                console.error("Error:", error);
-
-                document.getElementById("notes").textContent =
-                    "Unable to load study notes.";
-
-            }
-
-        }
-
-        // Execute the function
-        loadNotes();
-
-    </script>
-
-</body>
-</html>
+                    const ca
